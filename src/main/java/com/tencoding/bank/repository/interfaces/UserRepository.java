@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.tencoding.bank.dto.SignUpFormDto;
 import com.tencoding.bank.repository.model.User;
 
 
@@ -11,7 +12,9 @@ import com.tencoding.bank.repository.model.User;
 @Mapper // Mapper 반드시 기술을 해주어야 동작한다.
 public interface UserRepository {
 	// 뱅크 앱
-	public int insert(User user);
+	
+	// 매개 변수 수정
+	public int insert(SignUpFormDto signUpFormDto);
 	public int updateById(User user);
 	public int deleteById(Integer id);
 	public User findById(Integer id);

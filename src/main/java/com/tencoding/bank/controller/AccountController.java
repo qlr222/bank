@@ -15,8 +15,7 @@ public class AccountController {
 	
 	@GetMapping({"/list", "/"})
 	public String list() {
-//		return "account/list";
-		throw new CustomPageException("페이지가 없어요", HttpStatus.NOT_FOUND);
+		return "account/list";
 	}
 	
 	
