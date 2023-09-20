@@ -8,9 +8,9 @@ import lombok.Data;
 public class History {
 
 	private Integer id;
-	private long amount;
-	private long wBalance;
-	private long dBalnace;
+	private Long amount;
+	private Long wBalance;
+	private Long dBalance;
 	private Integer wAccountId;
 	private Integer dAccountId;
 	private Timestamp createdAt;

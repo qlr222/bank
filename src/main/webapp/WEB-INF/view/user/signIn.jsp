@@ -13,11 +13,11 @@
 			<form action="/user/sign-in" method="post">
 				<div class="form-group">
 					<label for="username">username</label>
-					<input class="form-control" type="text" id="username" name="username" placeholder="Enter username">
+					<input class="form-control" type="text" id="username" name="username" placeholder="Enter username" value="길동">
 				</div>
 				<div class="form-group">
 					<label for="pwd">password</label>
-					<input class="form-control" type="password" id="pwd" name="password" placeholder="Enter password">
+					<input class="form-control" type="password" id="pwd" name="password" placeholder="Enter password" value="1234">
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>

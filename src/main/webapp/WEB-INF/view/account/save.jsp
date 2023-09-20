@@ -9,7 +9,7 @@
 	<h5>어서오세요 환영합니다.</h5>
 	<div class="bg-light p-md-5 h-75">
 		<div class="form-group">
-			<form action="" method="post">
+			<form action="/account/save" method="post">
 				<div class="form-group">
 					<label for="number">계좌번호</label>
 					<input type="text" class="form-control" id="number" placeholder="생성 계좌번호를 입력하세요" name="number">

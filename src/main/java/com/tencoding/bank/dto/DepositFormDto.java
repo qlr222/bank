@@ -6,7 +6,7 @@ import lombok.Data;
 public class DepositFormDto {
 
 	// 화면 name태그 기준
-	private long amount;
+	private Long amount;
 	private String dAccountNumber;
 	
 }

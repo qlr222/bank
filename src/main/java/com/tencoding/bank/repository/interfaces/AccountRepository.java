@@ -8,9 +8,10 @@ import com.tencoding.bank.repository.model.Account;
 
 @Mapper
 public interface AccountRepository {
+	
 	public int insert(Account acount);
 	public int updateById(Account acount);
-	public int deleteById(Account acount);
+	public int deleteById(Integer id);
 	
 	public List<Account> findAll();
 	public Account findById(Integer id);

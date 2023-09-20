@@ -9,7 +9,7 @@
 	<h5>어서오세요 환영합니다.</h5>
 	<div class="bg-light p-md-5 h-75">
 		<div class="form-group">
-			<form action="" method="post">
+			<form action="/account/deposit" method="post">
 				<div class="form-group">
 					<label for="amount">입금 금액</label>
 					<input type="text" id="amount" class="form-control" placeholder="입금 금액을 입력하세요" name="amount">

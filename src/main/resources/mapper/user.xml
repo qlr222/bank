@@ -4,7 +4,7 @@
 <mapper namespace="com.tencoding.bank.repository.interfaces.UserRepository">
  
 	<select id="findByUsernameAndPassword" resultType="com.tencoding.bank.repository.model.User">
-		select * from user_tb where username=#{username} and password = #{password}
+		select * from user_tb where username = #{username} and password = #{password};
 	</select>
 	
 	<insert id="insert">
