@@ -9,10 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tencoding.bank.dto.DepositFormDto;
+import com.tencoding.bank.dto.HistoryDto;
 import com.tencoding.bank.dto.SaveFormDto;
 import com.tencoding.bank.dto.TransferFormDto;
 import com.tencoding.bank.dto.WithDrawFormDto;
@@ -238,10 +241,29 @@ public class AccountController {
 	
 	// TODO - 수정하기
 	// 상세 보기 페이지
-	// http://localhost:80/account/detail/1
-	
-	@GetMapping("/detail")
-	public String detail() {
+	// http://localhost:80/account/detail/1?type=all,deposit,withdraw
+	@GetMapping("/detail/{id}")
+	public String detail(@PathVariable Integer id,
+			@RequestParam(name = "type", defaultValue = "all", required = false) String type, Model model) {
+		// Todo - 주소 설계 추가하기
+		
+		// 1. 인증 여부 확인
+		User user = (User)session.getAttribute(Define.PRINCIPAL);
+		if(user == null) {
+			throw new UnAuthorizedException("로그인을 먼저 해주세요.", HttpStatus.UNAUTHORIZED);
+		}
+		
+		// 서비스 호출
+		Account account = accountService.readAccount(id);
+		List<HistoryDto> historyList = accountService.readHistoryListByAccount(id, type);
+		model.addAttribute("principal", user);
+		model.addAttribute("account", account);
+		model.addAttribute("historyList", historyList);
+		System.out.println(historyList);
+		// Account <-
+		// List -> History <-
+		
+		
 		return "account/detail";
 	}
 }
