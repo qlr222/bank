@@ -33,6 +33,11 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
 	
+	// 커넥트 J
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	
+	implementation 'org.springframework.security:spring-security-crypto'
+	
 }
 
 tasks.named('test') {

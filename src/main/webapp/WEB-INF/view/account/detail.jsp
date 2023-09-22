@@ -6,18 +6,23 @@
 	<h2>계좌 상세 보기(인증)</h2>
 	<h5>어서오세요 환영합니다.</h5>
 	<div class="bg-light p-md-5 h-75">
-		<div class="bg-light p-md-5 h-75">
-			${principal.username} 님의 계좌 <br>
-			계좌 번호 : ${account.number} <br>
-			잔액 : ${account.balance} 원
-		</div>
-		<br>
-		
-		<div>
-			<a href="/account/detail/${account.id}">전체</a>&nbsp;
-			<a href="/account/detail/${account.id}?type=deposit">입금</a>&nbsp;
-			<a href="/account/detail/${account.id}?type=withdraw">출금</a>&nbsp;
-		</div>
+	
+		<table class="table" style="text-align: center; border:1px solid #dee2e6">
+			<thead>
+				<tr>
+					<th>${principal.username} 님의 계좌</th>
+					<th>계좌 번호 : ${account.number}</th>
+					<th>잔액 : ${account.balance} 원</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+						<td><a href="/account/detail/${account.id}">전체 조회</a></td>
+						<td><a href="/account/detail/${account.id}?type=deposit">입금 조회</a></td>
+						<td><a href="/account/detail/${account.id}?type=withdraw">출금 조회</a></td>
+					</tr>
+			</tbody>
+		</table>
 		<table class="table" style="text-align: center">
 			<thead>
 				<tr>

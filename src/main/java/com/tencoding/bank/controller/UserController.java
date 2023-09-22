@@ -47,6 +47,7 @@ public class UserController {
 	
 	@PostMapping("/sign-up")
 	public String signUpProc(SignUpFormDto signUpFormDto) {
+		
 		// 1. 유효성 검사
 		if(signUpFormDto.getUsername() == null
 				|| signUpFormDto.getUsername().isEmpty()) {
